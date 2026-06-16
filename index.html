@@ -1,126 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kiosk Quest - React Live Coding</title>
     <style>
-        /* Minimal CSS - just enough to make it usable */
-        /* You don't need to write any custom styles */
+      /* Minimal CSS - just enough to make it usable */
+      /* You don't need to write any custom styles */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-        }
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
 
-        .container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
+      .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-        }
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+      }
 
-        .menu-item, .cart {
-            border: 1px solid #ddd;
-            padding: 15px;
-        }
+      .menu-item,
+      .cart {
+        border: 1px solid #ddd;
+        padding: 15px;
+      }
 
-        button {
-            padding: 8px 16px;
-            margin: 5px;
-            cursor: pointer;
-        }
+      button {
+        padding: 8px 16px;
+        margin: 5px;
+        cursor: pointer;
+      }
 
-        ul {
-            list-style: none;
-        }
+      ul {
+        list-style: none;
+      }
 
-        li {
-            padding: 5px 0;
-        }
+      li {
+        padding: 5px 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-    
+
     <!-- React and ReactDOM via CDN -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+
     <!-- Babel for JSX transformation in browser -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
     <!-- Your React app -->
     <script type="text/babel">
-        // Menu data (already provided - use this in your implementation)
-        const MENU_ITEMS = [
-          { id: 1, name: "Cheeseburger", priceCents: 899, prepSeconds: 90 },
-          { id: 2, name: "Fries", priceCents: 399, prepSeconds: 60 },
-          { id: 3, name: "Milkshake", priceCents: 499, prepSeconds: 75 },
-          { id: 4, name: "Salad", priceCents: 699, prepSeconds: 45 },
-          { id: 5, name: "Nuggets", priceCents: 599, prepSeconds: 80 }
-        ];
+      // Menu data (already provided - use this in your implementation)
+      const MENU_ITEMS = [
+        { id: 1, name: "Cheeseburger", priceCents: 899, prepSeconds: 90 },
+        { id: 2, name: "Fries", priceCents: 399, prepSeconds: 60 },
+        { id: 3, name: "Milkshake", priceCents: 499, prepSeconds: 75 },
+        { id: 4, name: "Salad", priceCents: 699, prepSeconds: 45 },
+        { id: 5, name: "Nuggets", priceCents: 599, prepSeconds: 80 },
+      ];
 
-        // Helper function: format price from cents to dollars
-        function formatPrice(priceCents) {
-            return (priceCents / 100).toFixed(2);
-        }
+      // Helper function: format price from cents to dollars
+      function formatPrice(priceCents) {
+        return (priceCents / 100).toFixed(2);
+      }
 
-        // Step 1: Display Menu
-        // Component: MenuItem
-        // Props: { item, onAddToCart }
-        // Purpose: Display a single menu item with name, price, and "Add to Cart" button
-        function MenuItem({ item, onAddToCart }) {
-            // TODO: Implement this component
-            return <div className="menu-item">{item.name}</div>;
-        }
+      // Step 1: Display Menu
+      // Component: MenuItem
+      // Props: { item, onAddToCart }
+      // Purpose: Display a single menu item with name, price, and "Add to Cart" button
+      function MenuItem({ item, onAddToCart }) {
+        // TODO: Implement this component
+        return <div className="menu-item">{item.name}</div>;
+      }
 
-        // Step 1: Display Menu
-        // Component: Menu
-        // Props: { items, onAddToCart }
-        // Purpose: Display all menu items in a grid layout
-        function Menu({ items, onAddToCart }) {
-            // TODO: Implement this component
-            return <div><h2>Menu</h2></div>;
-        }
+      // Step 1: Display Menu
+      // Component: Menu
+      // Props: { items, onAddToCart }
+      // Purpose: Display all menu items in a grid layout
+      function Menu({ items, onAddToCart }) {
+        // TODO: Implement this component
+        return (
+          <div>
+            <h2>Menu</h2>
+          </div>
+        );
+      }
 
-        // TODO: Add Cart component in later steps
-        function Cart({ items, onPlaceOrder, orderStatus }) {
-            return <div className="cart"><h2>Cart</h2></div>;
-        }
+      // TODO: Add Cart component in later steps
+      function Cart({ items, onPlaceOrder, orderStatus }) {
+        return (
+          <div className="cart">
+            <h2>Cart</h2>
+          </div>
+        );
+      }
 
-        // Component: App
-        // Purpose: Main component with state management for cart and order status
-        function App() {
-            // TODO: Add state for cart and order status
+      // Component: App
+      // Purpose: Main component with state management for cart and order status
+      function App() {
+        // TODO: Add state for cart and order status
 
-            // TODO: Implement addToCart and placeOrder functions
+        // TODO: Implement addToCart and placeOrder functions
 
-            return (
-                <div>
-                    <h1>Kiosk Quest</h1>
-                    <div className="container">
-                        <Menu items={MENU_ITEMS} onAddToCart={() => {}} />
-                        <Cart items={[]} onPlaceOrder={() => {}} orderStatus="idle" />
-                    </div>
-                </div>
-            );
-        }
+        return (
+          <div>
+            <h1>Kiosk Quest</h1>
+            <div className="container">
+              <Menu items={MENU_ITEMS} onAddToCart={() => {}} />
+              <Cart items={[]} onPlaceOrder={() => {}} orderStatus="idle" />
+            </div>
+          </div>
+        );
+      }
 
-        // Render the app
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+      // Render the app
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
     </script>
-</body>
+  </body>
 </html>
