@@ -107,7 +107,8 @@
       }
 
       // TODO: Add Cart component in later steps
-      function Cart({ items, onPlaceOrder, orderStatus }) {
+      // Bonus: Add onPlaceOrder prop for order submission
+      function Cart({ items, onPlaceOrder }) {
         return (
           <div className="cart">
             <h2>Cart</h2>
@@ -116,18 +117,19 @@
       }
 
       // Component: App
-      // Purpose: Main component with state management for cart and order status
+      // Purpose: Main component with state management for cart
       function App() {
-        // TODO: Add state for cart and order status
+        // TODO: Add state for cart
 
-        // TODO: Implement addToCart and placeOrder functions
+        // TODO: Implement addToCart function
+        // Bonus: Implement placeOrder function
 
         return (
           <div>
             <h1>Kiosk Quest</h1>
             <div className="container">
               <Menu items={MENU_ITEMS} onAddToCart={() => {}} />
-              <Cart items={[]} onPlaceOrder={() => {}} orderStatus="idle" />
+              <Cart items={[]} onPlaceOrder={() => {}} />
             </div>
           </div>
         );

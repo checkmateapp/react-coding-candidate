@@ -20,7 +20,7 @@ Time expectation: **~35-40 minutes coding + separate discussion time**
 
 **Use the provided starter template**
 
-- Navigate to `react_starter_template/`
+- Navigate to `react-coding-candidate/`
 - Open `index.html` in your browser (no build step required)
 - Edit the JavaScript directly in the `<script type="text/babel">` tag in `index.html`
 
@@ -100,34 +100,13 @@ Complete each step, then we'll discuss your approach before moving to the next.
 
 ---
 
-### Step 4: Order Submission (5-7 minutes)
+### Bonus: Order Submission (5 minutes, if time permits)
 
 **Task:** Add a "Place Order" button that:
 
 - Validates the cart is not empty
 - Shows a success message with the order summary
 - Clears the cart after successful submission
-
----
-
-### Bonus 1: Discount Logic (5 minutes, if time permits)
-
-**Task:** Add discount logic to the cart:
-
-- If subtotal **≥ 2000 cents** ($20), apply **10% discount** (round to nearest cent)
-- `final_total = subtotal - discount`
-- Display subtotal, discount (if applicable), and final total in the cart
-
----
-
-### Bonus 2: Prep Time Display (5 minutes, if time permits)
-
-**Task:** Display the estimated prep time using a greedy algorithm:
-
-- The kitchen has **2 parallel prep stations**
-- For each line item: `line_prep = prepSeconds * quantity`
-- Assign each `line_prep` to the station with the **lowest current load**
-- `estimated_prep_seconds = max(station_1_load, station_2_load)`
 
 ---
 
